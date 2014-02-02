@@ -16,7 +16,7 @@ namespace myAppMemory.Controllers
           public ActionResult Index()
           {
               ViewBag.stu = man.sortStudents();
-              return View();
+              return View("Index");
           }
 
           public ActionResult ViewAll()
@@ -26,7 +26,9 @@ namespace myAppMemory.Controllers
 
           public ActionResult Create()
           {
-              return View();
+              // when /Home/Create is passed as a route
+              // calls Views/Home/Creator.cshtml 
+              return View("Creator");
           }
 
           [HttpPost]
