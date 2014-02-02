@@ -1,4 +1,4 @@
-﻿@model AppMemory.Models.Student
+﻿@model CodeFirstOne.ViewModels.StudentPublic
 
 @{
     ViewBag.Title = "Details";
@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Student</h4>
+    <h4>StudentPublic</h4>
 	<hr />
     <dl class="dl-horizontal">
         <dt>
@@ -44,3 +44,7 @@
 
     </dl>
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
