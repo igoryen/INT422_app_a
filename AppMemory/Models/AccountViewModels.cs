@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace myAppMemory.Models
+namespace CodeFirstOne.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
