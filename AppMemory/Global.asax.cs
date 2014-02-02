@@ -5,9 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using AppMemory.Models;
 
-namespace AppMemory
+namespace CodeFirstOne
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -18,9 +17,7 @@ namespace AppMemory
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Initiallizer si = new Initiallizer();
-
-            Application["Students"] = si.Students;
+            System.Data.Entity.Database.SetInitializer(new CodeFirstOne.Models.Initiallizer());
         }
     }
 }
