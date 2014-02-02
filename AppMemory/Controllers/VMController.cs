@@ -12,6 +12,7 @@ namespace myAppMemory.Controllers
         private Repo_Student repo = new Repo_Student();
         //
         // GET: /VM/
+
         public ActionResult Index()
         {
             return View();
@@ -21,7 +22,7 @@ namespace myAppMemory.Controllers
         {
             return View();
         }
-         [HttpPost]
+        [HttpPost]
         public ActionResult Create(StudentFull st)
         {
             if (ModelState.IsValid)
@@ -35,14 +36,5 @@ namespace myAppMemory.Controllers
             }
         }
 
-        public ActionResult Details()
-        {
-            return View();
-        }
-
-        public ActionResult Error()
-        {
-            return View();
-        }
-	}
+    }
 }
