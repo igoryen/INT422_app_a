@@ -24,6 +24,8 @@ namespace CodeFirstOne.Controllers
             return View(repo.getStudentsFull());
         }
 
+       
+
         public ActionResult Create()
         {
             ViewBag.ddl = man.getSelectList();
