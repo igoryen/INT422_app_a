@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using AppMemory.Models;
+using myAppMemory.Models;
 
-namespace AppMemory.ViewModels
+namespace myAppMemory.ViewModels
 {
     public class Repo_Student
     {
