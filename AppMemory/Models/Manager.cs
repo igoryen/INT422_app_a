@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AppMemory.Models
+namespace myAppMemory.Models
 {
     public class Manager
     {
