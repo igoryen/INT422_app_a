@@ -4,79 +4,122 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 
-namespace CodeFirstOne.Models
+namespace INT422TestOne.Models
 {
     public class Initiallizer : DropCreateDatabaseAlways<DataContext>
     {
         protected override void Seed(DataContext dc)
         {
-            Course int422 = new Course();
-            int422.CourseCode = "INT422";
-            int422.CourseName = "Windows Web Programming";
+            Genre g = new Genre("Fantasy");
+            dc.Genres.Add(g);
+            Genre g1 = new Genre("Drama");
+            dc.Genres.Add(g1);
+            Genre g2 = new Genre("Comedy");
+            dc.Genres.Add(g2);
+            Genre g3 = new Genre("Adventure");
+            dc.Genres.Add(g3);
+            Genre g4 = new Genre("War");
+            dc.Genres.Add(g4);
+            Genre g5 = new Genre("Crime");
+            dc.Genres.Add(g5);
 
+            Director d = new Director("Goldwyn");
+            dc.Directors.Add(d);
+            Movie mo = new Movie();
+            mo.Title = "Darkfall Resurection";
+            mo.TicketPrice = 15.99m;
+            mo.Director = d;
+            mo.Genres.Add(g);
+            mo.Genres.Add(g1);
+            dc.Movies.Add(mo);
+            mo = null;
+            d = null;
 
-            Course jac444 = new Course();
-            jac444.CourseName = "Java";
-            jac444.CourseCode = "JAC444";
+            d = new Director("Hill");
+            dc.Directors.Add(d);
+            mo = new Movie();
+            mo.Title = "The Life & Adventures of Santa Claus";
+            mo.TicketPrice = 12.99m;
+            mo.Director = d;
+            mo.Genres.Add(g);
+            mo.Genres.Add(g2);
+            dc.Movies.Add(mo);
+            mo = null;
+            d = null;
 
-            Student student = new Student();
-            student.Id = 1;
-            student.FirstName = "Bob";
-            student.LastName = "Smith";
-            student.Phone = "555-555-5555";
-            student.StudentNumber = "011111111";
-            student.Courses.Add(jac444);
-            student.Courses.Add(int422);
+            d = new Director("Lean");
+            dc.Directors.Add(d);
+            mo = new Movie();
+            mo.Title = "Lawrence of Arabia";
+            mo.TicketPrice = 14.99m;
+            mo.Director = d;
+            mo.Genres.Add(g4);
+            mo.Genres.Add(g3);
+            mo.Genres.Add(g1);
+            dc.Movies.Add(mo);
+            mo = null;
 
-            dc.Students.Add(student);
-            int422.Students.Add(student);
-            jac444.Students.Add(student);
-            student = null;
+            mo = new Movie();
+            mo.Title = "A Passage to India";
+            mo.TicketPrice = 16.99m;
+            mo.Director = d;
+            mo.Genres.Add(g1);
+            mo.Genres.Add(g3);
+            dc.Movies.Add(mo);
+            mo = null;
+            d = null;
 
-            student = new Student();
-            student.Id = 2;
-            student.FirstName = "Mary";
-            student.LastName = "Brown";
-            student.Phone = "555-555-5555";
-            student.StudentNumber = "011111112";
-            student.Courses.Add(jac444);
-            student.Courses.Add(int422);
+            d = new Director("Aldrich");
+            dc.Directors.Add(d);
+            mo = new Movie();
+            mo.Title = "The Dirty Dozen";
+            mo.TicketPrice = 15.99m;
+            mo.Director = d;
+            mo.Genres.Add(g4);
+            mo.Genres.Add(g2);
+            mo.Genres.Add(g1);
+            dc.Movies.Add(mo);
+            mo = null;
 
-            dc.Students.Add(student);
-            int422.Students.Add(student);
-            jac444.Students.Add(student);
-            student = null;
+            mo = new Movie();
+            mo.Title = "The Choirboys";
+            mo.TicketPrice = 12.99m;
+            mo.Director = d;
+            mo.Genres.Add(g1);
+            mo.Genres.Add(g2);
+            mo.Genres.Add(g5);
+            dc.Movies.Add(mo);
+            mo = null;
 
-            student = new Student();
-            student.Id = 3;
-            student.FirstName = "Wei";
-            student.LastName = "Chen";
-            student.Phone = "555-555-5555";
-            student.StudentNumber = "011111113";
-            student.Courses.Add(jac444);
-            student.Courses.Add(int422);
+            mo = new Movie();
+            mo.Title = "The Longest Yard";
+            mo.TicketPrice = 13.99m;
+            mo.Director = d;
+            mo.Genres.Add(g1);
+            mo.Genres.Add(g2);
+            mo.Genres.Add(g5);
+            dc.Movies.Add(mo);
+            mo = null;
+            d = null;
 
-            dc.Students.Add(student);
-            int422.Students.Add(student);
-            jac444.Students.Add(student);
-            student = null;
+            d = new Director("Scott");
+            dc.Directors.Add(d);
+            mo = new Movie();
+            mo.Title = "True Romance";
+            mo.TicketPrice = 12.99m;
+            mo.Director = d;
+            mo.Genres.Add(g5);
+            mo.Genres.Add(g1);
+            dc.Movies.Add(mo);
+            mo = null;
 
-            student = new Student("John", "Woo", "555-555-1234", "011111114");
-            student.Id = 4;
-            student.Courses.Add(jac444);
-            student.Courses.Add(int422);
-
-            dc.Students.Add(student);
-            int422.Students.Add(student);
-            jac444.Students.Add(student);
-            dc.Courses.Add(int422);
-            dc.Courses.Add(jac444);
-
-            Faculty fac = new Faculty("Peter", "McIntyre", "555-567-6789", "034234678");
-            fac.Courses.Add(jac444);
-            fac.Courses.Add(int422);
-            dc.Faculty.Add(fac);
-            dc.SaveChanges();
+            mo = new Movie();
+            mo.Title = "Unstoppable";
+            mo.TicketPrice = 12.99m;
+            mo.Director = d;
+            mo.Genres.Add(g3);
+            mo.Genres.Add(g1);
+            dc.Movies.Add(mo);
         }
     }
 }
