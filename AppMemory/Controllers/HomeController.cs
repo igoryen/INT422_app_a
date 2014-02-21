@@ -3,68 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using CodeFirstOne.Models;
-using CodeFirstOne.ViewModels;
 
-namespace CodeFirstOne.Controllers
+namespace INT422TestOne.Controllers
 {
     public class HomeController : Controller
     {
-        private Repo_Student repo = new Repo_Student();
-        private Manager man = new Manager();
-        //
-        // GET: /VM/
         public ActionResult Index()
         {
-            return View(repo.getStudentNames());
+            return RedirectToAction("Index","Movie");
         }
 
-        public ActionResult List()
+        public ActionResult About()
         {
-            return View(repo.getStudentsFull());
-        }
+            ViewBag.Message = "Your application description page.";
 
-       
-
-        public ActionResult Create()
-        {
-            ViewBag.ddl = man.getSelectList();
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Create(StudentFull st, FormCollection form)
+        public ActionResult Contact()
         {
-            if (ModelState.IsValid)
-            {
-                //form[5] is the collection of selected values in the listbox
-                if (form.Count == 6)
-                {
-                    repo.createStudent(st, form[5]); 
-                }
-                else
-                {
-                    repo.createStudent(st);
-                }
+            ViewBag.Message = "Your contact page.";
 
-
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return View("Error");
-            }
-        }
-
-        public ActionResult Details(int? id)
-        {
-            return View(repo.getStudentPublic(id));
-        }
-
-        public ActionResult Error()
-        {
             return View();
         }
     }
-
 }
