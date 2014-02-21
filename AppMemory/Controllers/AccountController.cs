@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
-using CodeFirstOne.Models;
+using INT422TestOne.Models;
 
-namespace CodeFirstOne.Controllers
+namespace INT422TestOne.Controllers
 {
     [Authorize]
     public class AccountController : Controller
