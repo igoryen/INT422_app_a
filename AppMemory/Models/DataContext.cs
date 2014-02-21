@@ -1,15 +1,22 @@
 ﻿using System.Data.Entity;
 
-namespace CodeFirstOne.Models
+namespace INT422TestOne.Models
 {
     public class DataContext : DbContext
     {
         public DataContext() : base("name=DataContext") { }
 
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Faculty> Faculty { get; set; }
-        public DbSet<Course> Courses { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Director> Directors { get; set; }
+        public DbSet<Genre> Genres { get; set; }
 
-        public System.Data.Entity.DbSet<CodeFirstOne.ViewModels.StudentFull> StudentFulls { get; set; }
+        public System.Data.Entity.DbSet<INT422TestOne.ViewModels.MovieBase> MovieBases { get; set; }
+
+        public System.Data.Entity.DbSet<INT422TestOne.ViewModels.MovieFull> MovieFulls { get; set; }
+
+        public System.Data.Entity.DbSet<INT422TestOne.ViewModels.DirectorBase> DirectorBases { get; set; }
+
+        public System.Data.Entity.DbSet<INT422TestOne.ViewModels.GenreBase> GenreBases { get; set; }
+
     }
 }
